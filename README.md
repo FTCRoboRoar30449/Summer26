@@ -1,12 +1,45 @@
 # Summer 2026 Project Repository
 
-Welcome to the Summer 2026 Project Repository!
+Welcome to the FTC RoboRoar Summer 2026 Coding Program!
 
-This repository is used by all students participating in the Summer 2026 program. Each student will work in their own branch and submit changes through Pull Requests.
+This repository will be used to learn programming, complete assignments, and collaborate throughout the summer.
 
 ---
 
-# Team Members
+# Software You Need
+
+Before getting started, install:
+
+* GitHub Desktop
+* Android Studio
+* A GitHub Account
+
+---
+
+# Getting Started
+
+## Step 1: Clone the Repository
+
+Open **GitHub Desktop**.
+
+1. Click **File → Clone Repository**
+2. Select the **URL** tab
+3. Enter:
+
+```text
+https://github.com/FTCRoboRoar30449/Summer26.git
+```
+
+4. Choose a location on your computer.
+5. Click **Clone**.
+
+---
+
+## Step 2: Create Your Personal Branch
+
+### Important Branch Rules
+
+Each student has been assigned a branch and must work only in that branch throughout the summer.
 
 | Name     | Branch Name       |
 | -------- | ----------------- |
@@ -22,316 +55,309 @@ This repository is used by all students participating in the Summer 2026 program
 | Sarah    | `Summer-Sarah`    |
 | Trisha   | `Summer-Trisha`   |
 
-> Every student must work only on their assigned branch.
+### Rules
+
+✅ Always work in your assigned branch
+
+✅ Use the same branch for the entire Summer 2026 program
+
+❌ Do not create additional branches
+
+❌ Do not work in another student's branch
+
+❌ Do not rename your branch
 
 ---
 
-# Repository Setup
+### Create Your Branch
 
-## 1. Clone the Repository
-
-Clone the repository to your computer:
-
-```bash
-git clone https://github.com/FTCRoboRoar30449/Summer26.git
-```
-
-Move into the repository:
-
-```bash
-cd Summer26
-```
-
----
-
-## 2. Verify Current Branch
-
-Check your current branch:
-
-```bash
-git branch
-```
-
-Expected output:
-
-```text
-* main
-```
-
----
-
-## 3. Create Your Personal Branch
-
-Create your branch using the format:
-
-```text
-Summer-STUDENTNAME
-```
+1. Open GitHub Desktop.
+2. Click **Current Branch**.
+3. Select **New Branch**.
+4. Enter your assigned branch name exactly as shown above.
 
 Example:
 
-```bash
-git checkout -b Summer-Aashi
+```text
+Summer-Aashi
 ```
 
-Push your branch to GitHub:
+5. Click **Create Branch**.
+6. Click **Publish Branch**.
 
-```bash
-git push -u origin Summer-Aashi
-```
+⚠️ You only need to create your branch once. After that, always use the same branch whenever you work on the project.
 
-Repeat using your own name.
+---
+
+## Step 3: Open the Project in Android Studio
+
+1. Open Android Studio.
+2. Click **Open**.
+3. Browse to the cloned `Summer26` folder.
+4. Open the project.
+
+You are now ready to start coding!
 
 ---
 
 # Daily Workflow
 
-## Start Your Work Session
+Follow these steps every time you work on the project.
 
-Always pull the latest version of the main branch before starting work:
+## Step 1: Open GitHub Desktop
 
-```bash
-git checkout main
-git pull origin main
+Verify that your branch is selected.
+
+Example:
+
+```text
+Summer-Sarah
 ```
 
-Switch back to your branch:
-
-```bash
-git checkout Summer-YOURNAME
-```
-
-Merge the latest changes from main:
-
-```bash
-git merge main
-```
+You can check this in the top-left corner of GitHub Desktop.
 
 ---
 
-## Make Your Changes
+## Step 2: Get the Latest Updates
 
-Edit files as needed.
+Before you start coding:
 
-Check your changes:
+1. Click **Fetch Origin**.
+2. If updates are available, click **Pull Origin**.
 
-```bash
-git status
-```
+This ensures you have the latest version of the project.
 
 ---
 
-## Commit Your Changes
+## Step 3: Open Android Studio
 
-Stage files:
+Work on your assignment.
 
-```bash
-git add .
-```
+Remember to save your files regularly.
 
-Commit with a meaningful message:
+---
 
-```bash
-git commit -m "Describe your changes"
-```
+## Step 4: Commit Your Changes
+
+When you finish working:
+
+1. Open GitHub Desktop.
+2. Review the files you changed.
+3. Enter a short summary.
 
 Examples:
 
-```bash
-git commit -m "Added Week 2 assignment"
-git commit -m "Updated robot navigation code"
-git commit -m "Fixed bug in scoring logic"
+```text
+Completed Week 1 Assignment
+
+Added robot movement code
+
+Fixed sensor bug
+
+Updated README
 ```
 
----
+4. Click:
 
-## Push Your Changes
-
-Push updates to your branch:
-
-```bash
-git push
+```text
+Commit to Summer-YourName
 ```
 
----
+Example:
 
-# Submitting Your Work
+```text
+Commit to Summer-Aashi
+```
 
-When your work is complete:
-
-1. Push your latest changes.
-2. Go to the GitHub repository.
-3. Select your branch.
-4. Click **Compare & Pull Request**.
-5. Create a Pull Request into the `main` branch.
-6. Add a clear description of your work.
-7. Submit the Pull Request for review.
+A commit is like creating a save point for your work.
 
 ---
 
-## Pull Request Title Format
+## Step 5: Push Your Changes
+
+After committing:
+
+1. Click **Push Origin**.
+
+This uploads your work to GitHub.
+
+⚠️ If you do not click **Push Origin**, your latest work is only on your computer and is not backed up online.
+
+---
+
+# Submitting Assignments
+
+When your assignment is complete:
+
+1. Make sure all changes are committed.
+2. Click **Push Origin**.
+3. Open the GitHub repository in your browser.
+4. Click **Pull Requests**.
+5. Click **New Pull Request**.
+
+Verify:
+
+```text
+Base Branch: main
+Compare Branch: Summer-YourName
+```
+
+Example:
+
+```text
+Base Branch: main
+Compare Branch: Summer-Aashi
+```
+
+6. Enter a title.
+
+Examples:
+
+```text
+[Aashi] Week 1 Assignment
+
+[Sarah] Java Practice Exercises
+
+[Navya] Robot Drive Code
+```
+
+7. Add comments if needed.
+8. Click **Create Pull Request**.
+9. Notify your mentor that your assignment is ready for review.
+
+---
+
+# Pull Request Template
 
 Use the following format:
 
+## Summary
+
+Briefly describe what you completed.
+
+Example:
+
 ```text
-[Student Name] Assignment Name
+Completed Week 2 Java exercises and fixed two coding errors.
 ```
 
-Examples:
+## Files Updated
+
+List the major files you changed.
+
+Example:
 
 ```text
-[Aashi] Week 1 Git Exercise
-[Sarah] Robot Navigation Update
-[Navya] Sensor Integration Project
+MainActivity.java
+RobotController.java
+README.md
+```
+
+## Notes
+
+Add anything you want your mentor to know.
+
+Example:
+
+```text
+I tested all exercises successfully.
 ```
 
 ---
 
-## Pull Request Description Template
-
-```text
-Summary:
-- Brief description of changes
-
-Files Updated:
-- List major files modified
-
-Testing:
-- Describe how the changes were tested
-
-Notes:
-- Any additional comments
-```
-
----
-
-# Branch Naming Rules
-
-All branches must follow:
-
-```text
-Summer-STUDENTNAME
-```
-
-Valid Examples:
-
-```text
-Summer-Aashi
-Summer-Sarah
-Summer-Trisha
-Summer-Nimisha
-```
-
-Invalid Examples:
-
-```text
-aashi_branch
-summer-aashi
-feature-aashi
-student-aashi
-```
-
----
-
-# Git Commands Quick Reference
-
-## Check Current Branch
-
-```bash
-git branch
-```
-
-## Pull Latest Changes
-
-```bash
-git checkout main
-git pull origin main
-```
-
-## Switch Branch
-
-```bash
-git checkout Summer-YOURNAME
-```
-
-## Stage Files
-
-```bash
-git add .
-```
-
-## Commit Changes
-
-```bash
-git commit -m "Commit message"
-```
-
-## Push Changes
-
-```bash
-git push
-```
-
-## Check Repository Status
-
-```bash
-git status
-```
-
----
-
-# Rules & Expectations
+# Good Git Habits
 
 ### DO
 
-✅ Work only in your assigned branch
+✅ Save your work often
 
-✅ Commit frequently
+✅ Commit regularly
 
-✅ Write meaningful commit messages
+✅ Push your work every day
 
-✅ Pull latest changes before starting work
-
-✅ Submit Pull Requests for review
+✅ Use clear commit messages
 
 ✅ Ask questions when you need help
 
-### DO NOT
+### DON'T
 
-❌ Commit directly to `main`
+❌ Work in another student's branch
 
-❌ Modify another student's branch
+❌ Delete files you don't understand
 
-❌ Force-push without instructor approval
+❌ Rename project folders
 
-❌ Delete branches
+❌ Ignore GitHub Desktop warnings
 
-❌ Submit incomplete work without notes
+❌ Wait until the last day to upload your work
+
+---
+
+# Common Commit Message Examples
+
+```text
+Finished Week 1 Assignment
+
+Completed Java Exercise 3
+
+Added autonomous robot code
+
+Fixed motor control bug
+
+Updated comments
+
+Improved sensor logic
+```
+
+---
+
+# Troubleshooting
+
+If something goes wrong:
+
+### Before asking for help
+
+1. Save all files in Android Studio.
+2. Open GitHub Desktop.
+3. Take a screenshot of any error message.
+4. Share the screenshot with your mentor.
+
+### Common Checks
+
+Verify:
+
+* You are on your own branch.
+* You clicked **Fetch Origin**.
+* You clicked **Push Origin** after committing.
+* Android Studio files are saved.
+
+---
+
+# End-of-Day Checklist
+
+Before ending your work session:
+
+✅ All files saved
+
+✅ Changes committed
+
+✅ Changes pushed to GitHub
+
+✅ Correct branch selected
+
+✅ Assignment completed or progress saved
 
 ---
 
 # Need Help?
 
-If you encounter Git issues:
+If you're stuck, don't worry!
 
-1. Run:
-
-```bash
-git status
-```
-
-2. Verify you're on the correct branch:
-
-```bash
-git branch
-```
-
-3. Pull the latest changes from `main`.
-
-4. Reach out to your mentor or team lead.
+Ask your mentor or team lead for help. Learning GitHub and Android Studio takes practice, and questions are always welcome.
 
 ---
 
 Happy Coding!
 
-Summer 2026 Program
+**FTC RoboRoar #30449**
+**Summer 2026 Coding Program**
