@@ -17,6 +17,8 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class Constants {
 
+    public static final double FULL_DRIVE_POWER = 0.2; // Normal Drive speed
+
     public static FollowerConstants followerConstants = new FollowerConstants()
             .mass(12.15)
             .forwardZeroPowerAcceleration(-36.115310052404126)
@@ -57,7 +59,7 @@ public class Constants {
             .strafeEncoderDirection(GoBildaPinpointDriver.EncoderDirection.FORWARD);
 
     public static PathConstraints pathConstraints = new PathConstraints(
-            0.995,
+            FULL_DRIVE_POWER,
             500,
             1,
             1
