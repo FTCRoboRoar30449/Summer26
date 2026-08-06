@@ -29,6 +29,7 @@ public class AutoB_St_Far_En_Far extends OpMode {
     private Timer pathTimer, actionTimer, opmodeTimer;
     private int pathState;
 
+
     private final Pose startPose = Blue.START_POSE_FAR;
     private final Pose aprilTagPose = Blue.APRILTAG_POSE_FAR;
     private final Pose scorePoseAuto = Blue.SCORE_POSE_AUTO;
