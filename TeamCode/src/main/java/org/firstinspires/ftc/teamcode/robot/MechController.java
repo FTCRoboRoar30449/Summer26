@@ -31,7 +31,7 @@ public class MechController {
     private static final long DROP_WAIT_MS = 500; // Post Lifter in Down position
     private static final long APRIL_TAG_WAIT_MS = 3000; // 3 seconds waiting to detect AprilTag
 
-    public static final double FULL_DRIVE_POWER = 1.0; // Normal Drive speed
+    public static final double FULL_DRIVE_POWER = 0.2; // Normal Drive speed
 
     public static final double INTAKE_DRIVE_POWER = 0.19; // Drive speed during Intake Auto
     public static final double INTAKE_DRIVE_TELEOP = 0.6; // Drive speed during Intake TeleOp
