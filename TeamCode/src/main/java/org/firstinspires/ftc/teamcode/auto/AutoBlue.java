@@ -18,6 +18,7 @@ import org.firstinspires.ftc.teamcode.robot.VisionController;
 import org.firstinspires.ftc.vision.VisionPortal;
 
 @Disabled
+
 @Autonomous(name = "AutoBlue", group = "Blue")
 public class AutoBlue extends OpMode {
 

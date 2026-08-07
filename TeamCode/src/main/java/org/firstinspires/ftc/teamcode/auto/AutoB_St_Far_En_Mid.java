@@ -18,6 +18,7 @@ import org.firstinspires.ftc.teamcode.robot.RobotHardware;
 import org.firstinspires.ftc.teamcode.robot.VisionController;
 import org.firstinspires.ftc.vision.VisionPortal;
 @Autonomous(name = "AutoB_St_Far_En_Mid", group = "Blue")
+@Disabled
 public class AutoB_St_Far_En_Mid extends OpMode {
 
     RobotHardware robot;

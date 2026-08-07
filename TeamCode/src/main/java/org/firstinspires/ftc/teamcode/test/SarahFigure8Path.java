@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.auto;
+package org.firstinspires.ftc.teamcode.test;
 
 import com.pedropathing.follower.Follower;
 import com.pedropathing.geometry.BezierLine;
@@ -7,19 +7,16 @@ import com.pedropathing.paths.Path;
 import com.pedropathing.paths.PathChain;
 import com.pedropathing.util.Timer;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-
-import org.firstinspires.ftc.teamcode.field.Blue;
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 import org.firstinspires.ftc.teamcode.robot.MechController;
 import org.firstinspires.ftc.teamcode.robot.MechState;
 import org.firstinspires.ftc.teamcode.robot.RobotHardware;
 import org.firstinspires.ftc.teamcode.robot.VisionController;
 import org.firstinspires.ftc.vision.VisionPortal;
-@Disabled
-@Autonomous(name = "AutoB_St_Near_En_Near", group = "Blue")
-public class AutoB_St_Near_En_Near extends OpMode {
+
+@Autonomous(name = "SarahFigure8Path", group = "test")
+public class SarahFigure8Path extends OpMode {
 
     RobotHardware robot;
     MechController mechController;
@@ -30,110 +27,127 @@ public class AutoB_St_Near_En_Near extends OpMode {
     private Timer pathTimer, actionTimer, opmodeTimer;
     private int pathState;
 
-    private final Pose startPose = Blue.START_POSE_NEAR;
-    private final Pose aprilTagPoseReach = Blue.APRILTAG_POSE_NEAR_REACH;
-    private final Pose aprilTagPose = Blue.APRILTAG_POSE_NEAR_READ;
-    private final Pose scorePoseNear = Blue.SCORE_POSE_NEAR;
-    private final Pose readyNearPose = Blue.READY_NEAR_POSE;
-    private final Pose alignNearPose = Blue.ALIGN_NEAR_POSE;
-    private final Pose pickupNearPose = Blue.PICKUP_NEAR_POSE;
-    private final Pose endNearPose = Blue.TELEOP_START_NEAR;
+    private final Pose startPose = new Pose(59, 14, Math.toRadians(0));
+
+    private final Pose a1 = new Pose(118, 13, Math.toRadians(0));
+    private final Pose a2 = new Pose(128, 44, Math.toRadians(155));
+    private final Pose a3 = new Pose(18, 97, Math.toRadians(155));
+    private final Pose a4 = new Pose(21, 127, Math.toRadians(0));
+    private final Pose a5 = new Pose(120, 127, Math.toRadians(0));
+    private final Pose a6 = new Pose(126, 100, Math.toRadians(-155));
+    private final Pose a7 = new Pose(15, 43, Math.toRadians(-155));
+    private final Pose a8 = new Pose(22, 14, Math.toRadians(0));
+
+    private final Pose endPose = new Pose(58, 12, Math.toRadians(0));
 
 
-    private Path aprilTagReach;
-    private PathChain aprilTagRead, scorePreload, readyNear, alignNear, grabNear, scoreNear, endNear;
+    private Path start;
+    private PathChain A1, A2, A3, A4, A5, A6, A7, A8;
 
     public void buildPaths() {
-        aprilTagReach = new Path(new BezierLine(startPose, aprilTagPoseReach));
-        aprilTagReach.setLinearHeadingInterpolation(startPose.getHeading(), aprilTagPoseReach.getHeading());
+        start = new Path(new BezierLine(startPose, a1));
+        start.setLinearHeadingInterpolation(startPose.getHeading(), a1.getHeading());
 
-        aprilTagRead = follower.pathBuilder()
-                .addPath(new BezierLine(aprilTagPoseReach, aprilTagPose))
-                .setLinearHeadingInterpolation(aprilTagPoseReach.getHeading(), aprilTagPose.getHeading())
+        A1 = follower.pathBuilder()
+                .addPath(new BezierLine(a1, a2))
+                .setLinearHeadingInterpolation(a1.getHeading(), a2.getHeading())
                 .build();
 
-        scorePreload = follower.pathBuilder()
-                .addPath(new BezierLine(aprilTagPose, scorePoseNear))
-                .setLinearHeadingInterpolation(aprilTagPose.getHeading(), scorePoseNear.getHeading())
+        A2 = follower.pathBuilder()
+                .addPath(new BezierLine(a2, a3))
+                .setLinearHeadingInterpolation(a2.getHeading(), a3.getHeading())
                 .build();
 
-        readyNear = follower.pathBuilder()
-                .addPath(new BezierLine(scorePoseNear, readyNearPose))
-                .setLinearHeadingInterpolation(scorePoseNear.getHeading(), readyNearPose.getHeading())
+        A3 = follower.pathBuilder()
+                .addPath(new BezierLine(a3, a4))
+                .setLinearHeadingInterpolation(a3.getHeading(), a4.getHeading())
                 .build();
 
-        alignNear = follower.pathBuilder()
-                .addPath(new BezierLine(readyNearPose, alignNearPose))
-                .setLinearHeadingInterpolation(readyNearPose.getHeading(), alignNearPose.getHeading())
+        A4 = follower.pathBuilder()
+                .addPath(new BezierLine(a4, a5))
+                .setLinearHeadingInterpolation(a4.getHeading(), a5.getHeading())
                 .build();
 
-        grabNear = follower.pathBuilder()
-                .addPath(new BezierLine(alignNearPose, pickupNearPose))
-                .setLinearHeadingInterpolation(alignNearPose.getHeading(), pickupNearPose.getHeading())
+        A5 = follower.pathBuilder()
+                .addPath(new BezierLine(a5, a6))
+                .setLinearHeadingInterpolation(a5.getHeading(), a6.getHeading())
                 .build();
 
-        scoreNear = follower.pathBuilder()
-                .addPath(new BezierLine(pickupNearPose, scorePoseNear))
-                .setLinearHeadingInterpolation(pickupNearPose.getHeading(), scorePoseNear.getHeading())
+        A6 = follower.pathBuilder()
+                .addPath(new BezierLine(a6, a7))
+                .setLinearHeadingInterpolation(a6.getHeading(), a7.getHeading())
                 .build();
 
-        endNear = follower.pathBuilder()
-                .addPath(new BezierLine(scorePoseNear, endNearPose))
-                .setLinearHeadingInterpolation(scorePoseNear.getHeading(), endNearPose.getHeading())
+        A7 = follower.pathBuilder()
+                .addPath(new BezierLine(a7, a8))
+                .setLinearHeadingInterpolation(a7.getHeading(), a8.getHeading())
+                .build();
+
+        A8 = follower.pathBuilder()
+                .addPath(new BezierLine(a8, endPose))
+                .setLinearHeadingInterpolation(a8.getHeading(), endPose.getHeading())
                 .build();
     }
     public void autonomousPathUpdate() {
         switch (pathState) {
             case 0:
-                follower.followPath(aprilTagReach);
+                follower.followPath(start);
                 setPathState(1);
                 break;
             case 1:
                 if(!follower.isBusy()) {
-                    follower.followPath(aprilTagRead);
-                    mechController.setState(MechState.APRIL_TAG);
+                    follower.followPath(A1, true);
                     setPathState(2);
                 }
                 break;
             case 2:
                 if(!follower.isBusy()) {
-                    follower.followPath(scorePreload, true);
+                    follower.followPath(A2,true);
                     setPathState(3);
                 }
                 break;
             case 3:
                 if(!follower.isBusy()) {
-                    mechController.setState(MechState.SHOOT_STATE); // Shoot preload
-                    follower.followPath(readyNear,true);
+                    follower.followPath(A3,true);
                     setPathState(4);
                 }
                 break;
             case 4:
                 if(!follower.isBusy()) {
-                    follower.followPath(alignNear,true);
+                    follower.followPath(A4,true);
                     setPathState(5);
                 }
                 break;
             case 5:
                 if(!follower.isBusy()) {
-                    follower.followPath(grabNear,true);
-                    mechController.setState(MechState.INTAKE_STATE); //Intake 1
+                    follower.followPath(A5,true);
                     setPathState(6);
                 }
                 break;
             case 6:
                 if(!follower.isBusy()) {
-                    follower.followPath(scoreNear,true);
+                    follower.followPath(A6,true);
                     setPathState(7);
                 }
                 break;
             case 7:
                 if(!follower.isBusy()) {
-                    mechController.setState(MechState.SHOOT_STATE); // Shoot 1
-                    follower.followPath(endNear,true);
+                    follower.followPath(A7,true);
+                    setPathState(8);
+                }
+                break;
+            case 8:
+                if(!follower.isBusy()) {
+                    follower.followPath(A8,true);
+                    setPathState(9);
+                }
+                break;
+            case 9:
+                if(!follower.isBusy()) {
                     setPathState(-1);
                 }
                 break;
+
         }
     }
 
@@ -208,3 +222,4 @@ public class AutoB_St_Near_En_Near extends OpMode {
         mechController.setIndexer(MechController.INTAKE[0]);
     }
 }
+
