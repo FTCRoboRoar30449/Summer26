@@ -61,7 +61,7 @@ public class navya_challenge2 extends OpMode {
         public Paths(Follower follower) {
             mainChain = follower.pathBuilder()
                     .addPath(
-                            new BezierCurve(
+                            new BezierLine(
                                     new Pose(13.000, 83.000),
                                     new Pose(23.657, 105.442)
                             )
