@@ -7,15 +7,11 @@ import com.pedropathing.util.Timer;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
-import org.firstinspires.ftc.teamcode.robot.MechController;
 import org.firstinspires.ftc.teamcode.robot.RobotHardware;
 
 @Autonomous (name = "Saanvi Challenge One")
 public class SaanviChallengeOne extends OpMode {
-
     RobotHardware robot;
-    MechController mechController;
-
     private Follower follower;
     private Timer pathTimer, opModeTimer;  // Allows robot to do multiple things at once. Ex. checking sensors while running robot
 
@@ -185,10 +181,10 @@ public class SaanviChallengeOne extends OpMode {
         opModeTimer = new Timer();
         follower = Constants.createFollower(hardwareMap);
         follower.setMaxPower(0.2);
-        buildPaths();
         follower.setPose(startPose);
+        buildPaths();
     }
-
+    @Override
     public void start() {
         opModeTimer.resetTimer();
         setPathState(pathState);
@@ -205,6 +201,11 @@ public class SaanviChallengeOne extends OpMode {
         telemetry.addData("y", follower.getPose().getY());
         telemetry.addData("heading", follower.getPose().getHeading());
         telemetry.addData("Path time", pathTimer.getElapsedTimeSeconds());
+        telemetry.update();
+
+        telemetry.addData("Busy", follower.isBusy());
+        telemetry.addData("Path State", pathState);
+        telemetry.update();
     }
 }
 
