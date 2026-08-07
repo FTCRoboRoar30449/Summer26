@@ -63,7 +63,6 @@ public class navya_challenge2 extends OpMode {
                     .addPath(
                             new BezierCurve(
                                     new Pose(13.000, 83.000),
-                                    new Pose(31.695, 75.245),
                                     new Pose(23.657, 105.442)
                             )
                     )
