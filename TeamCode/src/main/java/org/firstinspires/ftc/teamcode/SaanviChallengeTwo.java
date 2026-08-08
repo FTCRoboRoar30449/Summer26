@@ -229,17 +229,7 @@ public class SaanviChallengeTwo extends OpMode {
     public void loop() {
         follower.update();
         statePathUpdate();
-
-        MechState state = mechController.getCurrentState();
-        if (state == MechState.SHOOT_STATE || state == MechState.APRIL_TAG) {
-            follower.setMaxPower(0.0);
-        } else if (state == MechState.INTAKE_STATE) {
-            follower.setMaxPower(MechController.INTAKE_DRIVE_POWER);
-        } else {
-            follower.setMaxPower(MechController.FULL_DRIVE_POWER);
-        }
-
-
+        mechController.update();
         telemetry.addData("path state", pathState.toString());
         telemetry.addData("x", follower.getPose().getX());
         telemetry.addData("y", follower.getPose().getY());
