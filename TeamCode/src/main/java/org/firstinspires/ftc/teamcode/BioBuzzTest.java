@@ -43,8 +43,8 @@ public class BioBuzzTest extends OpMode {
 
     private final Pose startPose = new Pose(56.69533169533169,8,Math.toRadians(90));
     private final Pose shootOne = new Pose(56.69533169533169,33.91400491400491,Math.toRadians(90));
-    private final Pose intakePose = new Pose(17.90343308507371,1.508136421222352,Math.toRadians(0));
-    private final Pose intakeAction = new Pose(3.6965601965601973,1.24078624078623,Math.toRadians(0));
+    private final Pose intakePose = new Pose(11.461156662309486,24.286185201710143,Math.toRadians(90));
+    private final Pose intakeAction = new Pose(7.377861009568327,3.3115179481033046,Math.toRadians(90));
     private final Pose shootTwo = new Pose(59.49140049140049,104.53685503685503, Math.toRadians(270));
     private final Pose endPoint = new Pose(5.111793611793616,104.68058968058968, Math.toRadians(0));
     private final Pose controlPoint = new Pose(40.57371007371006,140.84889434889436);
